@@ -1,0 +1,393 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!--JQUERY-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!--BOOTSTRAP-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!--JQUERY DATATABLE-->
+<link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col">            
+            <a class="btn btn-success m-2 text-light" data-bs-toggle="modal" data-bs-target="#createFreelancer">ADD NEW FREELANCER</a>
+        </div>
+    </div>
+    <hr/>
+    <div class="col">
+        <table id="freelancer" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Hobby</th>
+                    <th>Skill Sets</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Create Modal -->
+<div class="modal fade" id="createFreelancer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">ADD NEW FREELANCER</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col mb-3">                            
+                            <label for="createUserName" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="createUserName" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">                            
+                            <label for="createFirstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="">
+                        </div>
+                        <div class="col mb-3">                            
+                            <label for="createLastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="createLastName" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">                            
+                            <label for="createEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="createEmail" placeholder="">
+                        </div>
+                        <div class="col mb-3">                            
+                            <label for="createPhoneNum" class="form-label">Phone Number</label>
+                            <input type="number" class="form-control" id="createPhoneNum" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="createHobby" class="form-label">Hobby</label>
+                            <textarea class="form-control" id="createHobby" rows="3"></textarea>
+                        </div>
+                        <div class="col mb-3">
+                            <label for="createSkillset" class="form-label">Skill Sets</label>
+                            <textarea class="form-control" id="createSkillset" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="AddFreelancer()">Add Freelancer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- View Modal -->
+<div class="modal fade" id="viewFreelancer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">VIEW FREELANCER</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col mb-3">                            
+                            <label for="viewUserName" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="viewUserName" placeholder="" readonly>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">                            
+                            <label for="viewFirstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="viewFirstName" placeholder="" readonly>
+                        </div>
+                        <div class="col mb-3">                            
+                            <label for="viewLastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="viewLastName" placeholder="" readonly>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">                            
+                            <label for="viewEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="viewEmail" placeholder="" readonly>
+                        </div>
+                        <div class="col mb-3">                            
+                            <label for="viewPhoneNum" class="form-label">Phone Number</label>
+                            <input type="number" class="form-control" id="viewPhoneNum" placeholder="" readonly>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="viewHobby" class="form-label">Hobby</label>
+                            <textarea class="form-control" id="viewHobby" rows="3" readonly></textarea>
+                        </div>
+                        <div class="col mb-3">
+                            <label for="viewSkillset" class="form-label">Skill Sets</label>
+                            <textarea class="form-control" id="viewSkillSet" rows="3" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editFreelancer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">EDIT FREELANCER</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="editUserName" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="editUserName" placeholder="">
+                            <input type="text" class="form-control" id="editId" placeholder="" style="display:none;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">                            
+                            <label for="editFirstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="editFirstName" placeholder="">
+                        </div>
+                        <div class="col mb-3">                            
+                            <label for="editLastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="editLastName" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">                            
+                            <label for="editEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmail" placeholder="">
+                        </div>
+                        <div class="col mb-3">                            
+                            <label for="editPhoneNum" class="form-label">Phone Number</label>
+                            <input type="number" class="form-control" id="editPhoneNum" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="editHobby" class="form-label">Hobby</label>
+                            <textarea class="form-control" id="editHobby" rows="3"></textarea>
+                        </div>
+                        <div class="col mb-3">
+                            <label for="editSkillset" class="form-label">Skill Sets</label>
+                            <textarea class="form-control" id="editSkillSet" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="EditFreelancer()">Edit Freelancer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        // Retrieve List of Freelancers
+        $.ajax({
+            type: 'GET',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
+            },
+            url: '/api/Freelancer/GetAll',
+            dataType: "json",
+            success: function(response) {
+                var data = response.Result;
+                var table = $('#freelancer tbody');
+                table.empty();
+                $('#freelancer').show();
+                var len = data.length;
+                for (var i = 0; i < len; i++) {
+                    var Id = data[i].Id;
+                    var FirstName = data[i].FirstName;
+                    var LastName = data[i].LastName;
+                    var UserName = data[i].UserName;
+                    var Email = data[i].Email;
+                    var PhoneNum = data[i].PhoneNum;
+                    var Hobby = data[i].Hobby;
+                    var SkillSet = data[i].SkillSet;
+                    table.append('<tr>' +
+                        '<td>' + FirstName + '</td>' + 
+                        '<td>' + LastName + '</td>' + 
+                        '<td>' + UserName + '</td>' + 
+                        '<td>' + Email + '</td>' + 
+                        '<td>' + PhoneNum + '</td>' + 
+                        '<td>' + Hobby + '</td>' + 
+                        '<td>' + SkillSet + '</td>' +
+					    '<td>' + 
+						    '<div class="dropdown">' +
+	                            '<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">' +
+		                            'Action' +
+	                            '</button>' +
+	                            '<ul class="dropdown-menu">' +
+		                            '<li><a class="dropdown-item" href="#" onclick="ViewFreelancer(\'' + Id + '\')" data-bs-toggle="modal" data-bs-target="#viewFreelancer">VIEW</a></li>' +
+								'<li><a class="dropdown-item border-top" href="#"  onclick="ViewFreelancer(\'' + Id + '\')" data-bs-toggle="modal" data-bs-target="#editFreelancer">EDIT</a></li>' +
+		                            '<li><a class="dropdown-item border-top" href="#" onclick="DeleteFreelancer(\'' + Id + '\')">DELETE</a></li>' +
+								'</ul>' +
+                            '</div>' +
+                        '</td>' +
+					'</tr>');
+                }
+                new DataTable("#freelancer");
+            },
+            error: function(err) {
+              alert(err);
+            }
+        });
+    });
+
+    function AddFreelancer() {
+        $.ajax({
+            type: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
+            },
+            url: '/api/Freelancer/Create',
+            dataType: "json",
+            data: JSON.stringify({
+                'UserName': $('#createUserName').val()
+                , 'FirstName': $('#createFirstName').val()
+                , 'LastName': $('#createLastName').val()
+                , 'Email': $('#createEmail').val()
+                , 'PhoneNum': $('#createPhoneNum').val()
+                , 'Hobby': $('#createHobby').val()
+                , 'SkillSet': $('#createSkillset').val()
+            }),
+            success: function(response) {
+                if (response.Success) {
+                    alert(response.Message);
+                    location.reload();
+                } else {
+                    alert(response.Message);
+                }
+            }
+        });
+    }
+
+    function ViewFreelancer(id) {
+        $.ajax({
+            type: 'GET',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
+            },
+            url: '/api/Freelancer/GetById?Id=' + id,
+            dataType: "json",
+            success: function(response) {
+                var data = response.Result;
+                var len = data.length;
+                for (var i = 0; i < len; i++) {
+                    // For View
+                    $('#viewFirstName').val(data[i].FirstName);
+                    $('#viewLastName').val(data[i].LastName);
+                    $('#viewUserName').val(data[i].UserName);
+                    $('#viewEmail').val(data[i].Email);
+                    $('#viewPhoneNum').val(data[i].PhoneNum);
+                    $('#viewHobby').val(data[i].Hobby);
+                    $('#viewSkillSet').val(data[i].SkillSet);
+                    // For Edit
+                    $('#editId').val(data[i].Id);
+                    $('#editFirstName').val(data[i].FirstName);
+                    $('#editLastName').val(data[i].LastName);
+                    $('#editUserName').val(data[i].UserName);
+                    $('#editEmail').val(data[i].Email);
+                    $('#editPhoneNum').val(data[i].PhoneNum);
+                    $('#editHobby').val(data[i].Hobby);
+                    $('#editSkillSet').val(data[i].SkillSet);
+                }
+            },
+            error: function(err) {
+              alert(err);
+            }
+        });
+    }
+
+    function EditFreelancer() {
+        var id = $('#editId').val();
+
+        if (id === null || id === '') {
+            alert('No record Id detected.');
+        } else {
+            $.ajax({
+                type: 'PUT',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                  'Access-Control-Allow-Origin': '*'
+                },
+                url: '/api/Freelancer/Update',
+                dataType: "json",
+                data: JSON.stringify({
+                    'Id': id
+                    , 'UserName': $('#editUserName').val()
+                    , 'FirstName': $('#editFirstName').val()
+                    , 'LastName': $('#editLastName').val()
+                    , 'Email': $('#editEmail').val()
+                    , 'PhoneNum': $('#editPhoneNum').val()
+                    , 'Hobby': $('#editHobby').val()
+                    , 'SkillSet': $('#editSkillSet').val()
+                }),
+                success: function(response) {
+                    if (response.Success) {
+                        alert(response.Message);
+                        location.reload();
+                    } else {
+                        alert(response.Message);
+                    }
+                }
+            });
+        }
+    }
+
+    function DeleteFreelancer(id) {
+        $.ajax({
+            type: 'DELETE',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
+            },
+            url: '/api/Freelancer/Delete?Id=' + id,
+            dataType: "json",
+            success: function(response) {
+                if (response.Success) {
+                    alert(response.Message);
+                    location.reload();
+                } else {
+                    alert(response.Message);
+                }
+            }
+        });
+    }
+</script>
