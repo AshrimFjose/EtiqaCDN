@@ -5,6 +5,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
-    <History>True|2023-10-17T07:01:49.4034892Z;</History>
+    <History>True|2023-10-17T07:08:04.7988437Z;True|2023-10-17T15:05:02.3881900+08:00;True|2023-10-17T15:01:49.4034892+08:00;</History>
   </PropertyGroup>
 </Project>
