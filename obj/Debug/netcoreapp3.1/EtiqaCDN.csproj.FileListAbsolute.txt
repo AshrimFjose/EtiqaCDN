@@ -344,8 +344,6 @@ C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\
 C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\EtiqaCDN.RazorAssemblyInfo.cache
 C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\EtiqaCDN.RazorAssemblyInfo.cs
 C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\staticwebassets\EtiqaCDN.StaticWebAssets.Manifest.cache
-C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\staticwebassets\EtiqaCDN.StaticWebAssets.xml
-C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\scopedcss\bundle\EtiqaCDN.styles.css
 C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\EtiqaCDN.TagHelpers.input.cache
 C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\EtiqaCDN.TagHelpers.output.cache
 C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\EtiqaCDN.RazorCoreGenerate.cache
@@ -364,3 +362,6 @@ C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\
 C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\EtiqaCDN.dll
 C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\EtiqaCDN.pdb
 C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\EtiqaCDN.genruntimeconfig.cache
+C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\EtiqaCDN.csproj.AssemblyReference.cache
+C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\staticwebassets\EtiqaCDN.StaticWebAssets.xml
+C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\obj\Debug\netcoreapp3.1\scopedcss\bundle\EtiqaCDN.styles.css

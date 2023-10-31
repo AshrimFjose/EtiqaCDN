@@ -5,6 +5,12 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\syamir.eusoff\Documents\Github\ashrim\EtiqaCDN\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
-    <History>True|2023-10-17T07:08:04.7988437Z;True|2023-10-17T15:05:02.3881900+08:00;True|2023-10-17T15:01:49.4034892+08:00;</History>
+    <History>True|2023-10-17T07:26:32.5713789Z;True|2023-10-17T15:14:29.4704987+08:00;True|2023-10-17T15:08:04.7988437+08:00;True|2023-10-17T15:05:02.3881900+08:00;True|2023-10-17T15:01:49.4034892+08:00;</History>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="MainDB">
+      <Value>Server=localhost%3bDatabase=EtiqaCDN%3bTrusted_Connection=True%3bMultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
 </Project>
